@@ -1,5 +1,5 @@
 import React, { createContext, useReducer, useEffect } from "react";
-import { addTask } from "../helper/reducerFunctions";
+import { addTask, deleteTask } from "../helper/reducerFunctions";
 
 const initialState = JSON.parse(localStorage.getItem("tasks")) || {
   todoTasks: [
@@ -21,6 +21,8 @@ const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_TASK":
       return addTask(state, action);
+    case "DELETE_TASK":
+      return deleteTask(state, action);
   }
 };
 

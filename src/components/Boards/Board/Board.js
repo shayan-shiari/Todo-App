@@ -26,8 +26,8 @@ const Board = (props) => {
           <p>{length} Tasks</p>
         </div>
         <div>
-          {tasks[status].map((item) => {
-            return <Task text={item} status={status} />;
+          {tasks[status].map((item, index) => {
+            return <Task text={item} status={status} index={index} />;
           })}
           <p onClick={() => setIsOpen(!isOpen)}>new</p>
         </div>

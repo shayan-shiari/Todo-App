@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./task.module.scss";
+import { taksContext } from "../../context/TaskContextProvider";
 
-const Task = ({ text, status }) => {
+const Task = ({ text, status, index }) => {
+  const { dispatch } = useContext(taksContext); //context
+
   return (
     <div
       className={`${styles.container} ${
@@ -9,6 +12,9 @@ const Task = ({ text, status }) => {
       }`}
     >
       <p>{text}</p>
+      <p onClick={() => dispatch({ type: "DELETE_TASK", index, status })}>
+        delete
+      </p>
     </div>
   );
 };

@@ -2,6 +2,7 @@
   .heading {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
   }
 
   .todo {
@@ -11,22 +12,24 @@
     padding: 20px 20px 30px 20px;
     border-radius: 10px;
 
-    p:nth-child(1) {
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 18px;
-      letter-spacing: 0em;
-      text-align: left;
-      color: #6e1e29;
-    }
+    .heading {
+      p:nth-child(1) {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #6e1e29;
+      }
 
-    p:nth-child(2) {
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 15px;
-      letter-spacing: 0em;
-      text-align: left;
-      color: #d4afb4;
+      p:nth-child(2) {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #d4afb4;
+      }
     }
   }
 
@@ -37,22 +40,24 @@
     padding: 20px 20px 30px 20px;
     border-radius: 10px;
 
-    p:nth-child(1) {
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 18px;
-      letter-spacing: 0em;
-      text-align: left;
-      color: #6e1e29;
-    }
+    .heading {
+      p:nth-child(1) {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #6e1e29;
+      }
 
-    p:nth-child(2) {
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 15px;
-      letter-spacing: 0em;
-      text-align: left;
-      color: #d4afb4;
+      p:nth-child(2) {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #d4afb4;
+      }
     }
   }
 
@@ -63,22 +68,24 @@
     border-radius: 10px;
     background: #f4f9f3;
 
-    p:nth-child(1) {
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 18px;
-      letter-spacing: 0em;
-      text-align: left;
-      color: #6e1e29;
-    }
+    .heading {
+      p:nth-child(1) {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #6e1e29;
+      }
 
-    p:nth-child(2) {
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 15px;
-      letter-spacing: 0em;
-      text-align: left;
-      color: #d4afb4;
+      p:nth-child(2) {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #d4afb4;
+      }
     }
   }
 }

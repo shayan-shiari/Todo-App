@@ -1,4 +1,5 @@
 import React, { createContext, useReducer } from "react";
+import { addTask } from "../helper/reducerFunctions";
 
 const initialState = {
   todoTasks: [
@@ -16,10 +17,14 @@ const initialState = {
   ],
 };
 
-const reducer = () => {};
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "ADD_TASK":
+      return addTask(state, action);
+  }
+};
 
-export const taksContext = createContext();  //context
-
+export const taksContext = createContext(); //context
 
 // this component wrapped all components to use context value
 const TaskContextProvider = ({ children }) => {

@@ -32,7 +32,7 @@ const Board = (props) => {
           <p onClick={() => setIsOpen(!isOpen)}>new</p>
         </div>
       </div>
-      {isOpen && <Modal isOpenFunc={setIsOpen} />}
+      {isOpen && <Modal isOpenFunc={setIsOpen} status={status} />}
     </div>
   );
 };

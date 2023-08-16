@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Header/Header";
 import styles from "./main..module.scss";
-import AllBoards from "../AllBoards/AllBoards";
+import AllBoards from "../Boards/AllBoards/AllBoards";
 
 const Main = () => {
   return (

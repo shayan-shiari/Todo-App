@@ -5,20 +5,20 @@ import styles from "./all-boards.module.scss";
 const AllBoards = () => {
   const data = [
     {
-      status: "Todo",
+      title: "Todo",
     },
     {
-      status: "Doing 💪",
+      title: "Doing 💪",
     },
     {
-      status: "Done",
+      title: "Done 🎉",
     },
   ];
 
   return (
     <div className={styles.container}>
-      {data.map((item) => {
-        return <Board {...item} />;
+      {data.map((item, index) => {
+        return <Board {...item} key={index} />;
       })}
     </div>
   );

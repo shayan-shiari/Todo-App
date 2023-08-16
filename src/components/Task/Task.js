@@ -11,6 +11,18 @@ const Task = ({ text, status, index }) => {
         status === "doneTasks" && styles.doneContainer
       }`}
     >
+      <input
+        onChange={(e) => {
+          dispatch({
+            type: "TOGGLE_DONE",
+            index,
+            status,
+            value: e.target.checked,
+          });
+        }}
+        checked={status === "doneTasks" && true}
+        type="checkbox"
+      />
       <p>{text}</p>
       <p onClick={() => dispatch({ type: "DELETE_TASK", index, status })}>
         delete

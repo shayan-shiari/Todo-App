@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./board.module.css";
+import styles from "./board.module.scss";
 
 const Board = (props) => {
   const { status } = props;

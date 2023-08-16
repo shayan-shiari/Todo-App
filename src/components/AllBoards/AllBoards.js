@@ -1,6 +1,6 @@
 import React from "react";
 import Board from "../Board/Board";
-import styles from "./all-boards.module.css";
+import styles from "./all-boards.module.scss";
 
 const AllBoards = () => {
   const data = [
@@ -8,7 +8,7 @@ const AllBoards = () => {
       status: "Todo",
     },
     {
-      status: "Doing",
+      status: "Doing 💪",
     },
     {
       status: "Done",

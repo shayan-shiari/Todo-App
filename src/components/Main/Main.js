@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Header/Header";
-import styles from "./main..module.css";
+import styles from "./main..module.scss";
 import AllBoards from "../AllBoards/AllBoards";
 
 const Main = () => {

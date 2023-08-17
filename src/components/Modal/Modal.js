@@ -6,13 +6,18 @@ import { taksContext } from "../../context/TaskContextProvider";
 const Modal = ({ isOpenFunc, status }) => {
   const [inputValue, setInputValue] = useState("");
   const { dispatch } = useContext(taksContext); //context
+  const multilineValue = inputValue.split(/\r?\n/);
 
   const formHandler = (e) => {
     e.preventDefault();
     if (!inputValue) {
       toast.error("please add a task");
     } else {
-      dispatch({ type: "ADD_TASK", value: inputValue, addTaskType: status });
+      dispatch({
+        type: "ADD_TASK",
+        value: multilineValue,
+        addTaskType: status,
+      });
     }
   };
 

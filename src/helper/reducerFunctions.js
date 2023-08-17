@@ -1,9 +1,10 @@
-// to add Todo-Task and Doing-Task
+// to add Todo-Task and Doing-Task - Multi
 const addTask = (state, action) => {
+  const multiTask = action.value.map((item) => item);
   const addTaskType = action.addTaskType;
-  state[addTaskType].push(action.value);
   return {
     ...state,
+    [addTaskType]: state[addTaskType].concat(multiTask),
   };
 };
 

@@ -3,6 +3,10 @@
 }
 
 .container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
   background-color: #fff;
   margin-bottom: 12px;
   padding: 12px 10px 12px 10px;
@@ -10,7 +14,12 @@
   border: 1px solid #f3e1df;
   color: #3a3a3a;
 
+  &:hover .deleteBtn{
+    opacity: 1;
+  }
+
   p {
+    width: 254px;
     font-size: 12px;
     font-weight: 600;
     line-height: 15px;
@@ -19,3 +28,29 @@
   }
 }
 
+.deleteBtn {
+  position: relative;
+  opacity: 0;
+  transition: all ease .3s;
+  cursor: pointer;
+  
+  div {
+    width: 1.71px;
+    height: 12px;
+    border-radius: 1px;
+    background: #F4C5CB;
+  }
+
+  div:nth-child(1) {
+    transform: rotate(-45deg);
+    background-color:red;
+  }
+
+  div:nth-child(2) {
+    transform: rotate(45deg);
+    background-color:red;
+    position: absolute;
+    bottom: 0;
+  }
+
+}

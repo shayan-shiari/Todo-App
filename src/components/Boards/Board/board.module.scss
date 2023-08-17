@@ -7,6 +7,7 @@
 
   .todo {
     background-color: #fef4f3;
+    overflow: auto;
     width: 340px;
     height: 700px;
     padding: 20px 20px 30px 20px;
@@ -35,6 +36,7 @@
 
   .doing {
     background: #fffbf2;
+    overflow: auto;
     width: 340px;
     height: 700px;
     padding: 20px 20px 30px 20px;
@@ -64,6 +66,7 @@
   .done {
     width: 340px;
     height: 700px;
+    overflow: auto;
     padding: 20px 20px 30px 20px;
     border-radius: 10px;
     background: #f4f9f3;

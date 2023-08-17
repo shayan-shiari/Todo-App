@@ -4,6 +4,7 @@ import {
   deleteTask,
   toggleDone,
   updateTask,
+  dragAndDrop,
 } from "../helper/reducerFunctions";
 
 const initialState = JSON.parse(localStorage.getItem("tasks")) || {
@@ -32,6 +33,8 @@ const reducer = (state, action) => {
       return toggleDone(state, action);
     case "UPDATE_TASK":
       return updateTask(state, action);
+    case "DRAG_DROP":
+      return dragAndDrop(state, action);
   }
 };
 

@@ -1,13 +1,23 @@
 import React, { useContext, useState } from "react";
 import styles from "./task.module.scss";
 import { taksContext } from "../../context/TaskContextProvider";
+import { useDrag } from "react-dnd";
 
 const Task = ({ text, status, index }) => {
   const { dispatch } = useContext(taksContext); //context
   const [showUpDateTask, setShowUpdateTask] = useState(false);
 
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: "task",
+    item: { index, status, text },
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }));
+
   return (
     <div
+      ref={drag}
       className={`${styles.container} ${
         status === "doneTasks" && styles.doneContainer
       }`}
@@ -41,9 +51,13 @@ const Task = ({ text, status, index }) => {
           }}
         />
       )}
-      <p onClick={() => dispatch({ type: "DELETE_TASK", index, status })}>
-        delete
-      </p>
+      <div
+        className={styles.deleteBtn}
+        onClick={() => dispatch({ type: "DELETE_TASK", index, status })}
+      >
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 };

@@ -42,4 +42,14 @@ const updateTask = (state, action) => {
   };
 };
 
-export { addTask, deleteTask, toggleDone, updateTask };
+const dragAndDrop = (state, action) => {
+  state[action.currentStatus].unshift(action.value);
+  return {
+    ...state,
+    [action.prevStatus]: state[action.prevStatus].filter(
+      (item, index) => index !== action.index
+    ),
+  };
+};
+
+export { addTask, deleteTask, toggleDone, updateTask, dragAndDrop };

@@ -1,5 +1,10 @@
 import React, { createContext, useReducer, useEffect } from "react";
-import { addTask, deleteTask, toggleDone } from "../helper/reducerFunctions";
+import {
+  addTask,
+  deleteTask,
+  toggleDone,
+  updateTask,
+} from "../helper/reducerFunctions";
 
 const initialState = JSON.parse(localStorage.getItem("tasks")) || {
   todoTasks: [
@@ -25,6 +30,8 @@ const reducer = (state, action) => {
       return deleteTask(state, action);
     case "TOGGLE_DONE":
       return toggleDone(state, action);
+    case "UPDATE_TASK":
+      return updateTask(state, action);
   }
 };
 

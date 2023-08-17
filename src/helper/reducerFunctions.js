@@ -35,4 +35,11 @@ const toggleDone = (state, action) => {
   };
 };
 
-export { addTask, deleteTask, toggleDone };
+const updateTask = (state, action) => {
+  state[action.status][action.index] = action.value;
+  return {
+    ...state,
+  };
+};
+
+export { addTask, deleteTask, toggleDone, updateTask };

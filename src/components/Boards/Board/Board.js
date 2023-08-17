@@ -31,28 +31,38 @@ const Board = (props) => {
   };
 
   return (
-    <div ref={drop} className={`${styles.container} ${isOver && styles.cc}`}>
-      <div
-        className={
-          title === "Todo"
-            ? styles.todo
-            : title === "Doing 💪"
-            ? styles.doing
-            : styles.done
-        }
-      >
-        <div className={styles.heading}>
-          <p>{title}</p>
-          <p>{length} Tasks</p>
-        </div>
-        <div>
-          {tasks[status].map((item, index) => {
-            return (
-              <Task text={item} status={status} index={index} key={uuidv4()} />
-            );
-          })}
-          <p onClick={() => setIsOpen(!isOpen)}>new</p>
-        </div>
+    <div
+      ref={drop}
+      className={
+        title === "Todo"
+          ? styles.todo
+          : title === "Doing 💪"
+          ? styles.doing
+          : styles.done
+      }
+    >
+      <div className={styles.heading}>
+        <p>{title}</p>
+        <p>{length} Tasks</p>
+      </div>
+      <div>
+        {tasks[status].map((item, index) => {
+          return (
+            <Task
+              text={item}
+              status={status}
+              title={title}
+              index={index}
+              key={uuidv4()}
+            />
+          );
+        })}
+        {(status === "todoTasks" || status === "doingTasks") && (
+          <div className={styles.addBtn} onClick={() => setIsOpen(!isOpen)}>
+            <div>+</div>
+            <p>New</p>
+          </div>
+        )}
       </div>
       {isOpen && <Modal isOpenFunc={setIsOpen} status={status} />}
     </div>

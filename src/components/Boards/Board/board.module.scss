@@ -1,94 +1,134 @@
-.container {
+.heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.todo {
+  background-color: #fef4f3;
+  overflow: auto;
+  width: 340px;
+  height: 700px;
+  padding: 20px 20px 30px 20px;
+  border-radius: 10px;
+
   .heading {
+    p:nth-child(1) {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #6e1e29;
+    }
+
+    p:nth-child(2) {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 15px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #d4afb4;
+    }
+  }
+
+  .addBtn {
+    color: #d37a87;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    cursor: pointer;
+
+    div {
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
   }
+}
 
-  .todo {
-    background-color: #fef4f3;
-    overflow: auto;
-    width: 340px;
-    height: 700px;
-    padding: 20px 20px 30px 20px;
-    border-radius: 10px;
+.doing {
+  background: #fffbf2;
+  overflow: auto;
+  width: 340px;
+  height: 700px;
+  padding: 20px 20px 30px 20px;
+  border-radius: 10px;
 
-    .heading {
-      p:nth-child(1) {
-        font-size: 15px;
-        font-weight: 600;
-        line-height: 18px;
-        letter-spacing: 0em;
-        text-align: left;
-        color: #6e1e29;
-      }
+  .heading {
+    p:nth-child(1) {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #795b19;
+    }
 
-      p:nth-child(2) {
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 15px;
-        letter-spacing: 0em;
-        text-align: left;
-        color: #d4afb4;
-      }
+    p:nth-child(2) {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 15px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #decca4;
     }
   }
 
-  .doing {
-    background: #fffbf2;
-    overflow: auto;
-    width: 340px;
-    height: 700px;
-    padding: 20px 20px 30px 20px;
-    border-radius: 10px;
+  .addBtn {
+    color: #c2a25b;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    cursor: pointer;
 
-    .heading {
-      p:nth-child(1) {
-        font-size: 15px;
-        font-weight: 600;
-        line-height: 18px;
-        letter-spacing: 0em;
-        text-align: left;
-        color: #6e1e29;
-      }
+    div {
+      font-size: 22px;
+    }
 
-      p:nth-child(2) {
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 15px;
-        letter-spacing: 0em;
-        text-align: left;
-        color: #d4afb4;
-      }
+    p {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-align: left;
     }
   }
+}
 
-  .done {
-    width: 340px;
-    height: 700px;
-    overflow: auto;
-    padding: 20px 20px 30px 20px;
-    border-radius: 10px;
-    background: #f4f9f3;
+.done {
+  width: 340px;
+  height: 700px;
+  overflow: auto;
+  padding: 20px 20px 30px 20px;
+  border-radius: 10px;
+  background: #f4f9f3;
 
-    .heading {
-      p:nth-child(1) {
-        font-size: 15px;
-        font-weight: 600;
-        line-height: 18px;
-        letter-spacing: 0em;
-        text-align: left;
-        color: #6e1e29;
-      }
+  .heading {
+    p:nth-child(1) {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #286c1a;
+    }
 
-      p:nth-child(2) {
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 15px;
-        letter-spacing: 0em;
-        text-align: left;
-        color: #d4afb4;
-      }
+    p:nth-child(2) {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 15px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #bcd7b6;
     }
   }
 }

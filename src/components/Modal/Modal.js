@@ -13,6 +13,7 @@ const Modal = ({ isOpenFunc, status }) => {
     if (!inputValue) {
       toast.error("please add a task");
     } else {
+      isOpenFunc(false);
       dispatch({
         type: "ADD_TASK",
         value: multilineValue,
@@ -24,7 +25,7 @@ const Modal = ({ isOpenFunc, status }) => {
   return (
     <div className={styles.container}>
       <div>
-        <h2>Add</h2>
+        <h2>Add {status}</h2>
         <form onSubmit={formHandler}>
           <fieldset>
             <textarea
@@ -38,7 +39,7 @@ const Modal = ({ isOpenFunc, status }) => {
           <fieldset>
             <button type="submit">Add</button>
             <button type="reset" onClick={() => isOpenFunc(false)}>
-              close
+              Close
             </button>
           </fieldset>
         </form>

@@ -3,7 +3,7 @@ import styles from "./task.module.scss";
 import { taksContext } from "../../context/TaskContextProvider";
 import { useDrag } from "react-dnd";
 
-const Task = ({ text, status, index }) => {
+const Task = ({ text, status, index, title }) => {
   const { dispatch } = useContext(taksContext); //context
   const [showUpDateTask, setShowUpdateTask] = useState(false);
 
@@ -19,8 +19,13 @@ const Task = ({ text, status, index }) => {
     <div
       ref={drag}
       className={`${styles.container} ${
-        status === "doneTasks" && styles.doneContainer
-      }`}
+        title === "Todo"
+          ? styles.todo
+          : title === "Doing 💪"
+          ? styles.doing
+          : styles.done
+      }
+     `}
     >
       <input
         onChange={(e) => {

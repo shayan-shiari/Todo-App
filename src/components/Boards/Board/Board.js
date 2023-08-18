@@ -20,6 +20,8 @@ const Board = (props) => {
     }),
   }));
 
+  console.log(isOver);
+
   const addItemToSection = (item) => {
     dispatch({
       type: "DRAG_DROP",
@@ -33,6 +35,7 @@ const Board = (props) => {
   return (
     <div
       ref={drop}
+      style={{ background: isOver && "rgb(198, 204, 235)" }}
       className={
         title === "Todo"
           ? styles.todo

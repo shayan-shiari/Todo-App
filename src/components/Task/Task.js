@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import styles from "./task.module.scss";
 import { taksContext } from "../../context/TaskContextProvider";
 import { useDrag } from "react-dnd";
@@ -6,6 +6,7 @@ import { useDrag } from "react-dnd";
 const Task = ({ text, status, index, title }) => {
   const { dispatch } = useContext(taksContext); //context
   const [showUpDateTask, setShowUpdateTask] = useState(false);
+  const refInp = useRef();
 
   const [{ isDragging }, drag] = useDrag(() => ({
     type: "task",
@@ -14,6 +15,24 @@ const Task = ({ text, status, index, title }) => {
       isDragging: !!monitor.isDragging(),
     }),
   }));
+
+  useEffect(() => {
+    if (refInp.current) {
+      refInp.current.value = text;
+      console.log("render");
+    }
+  });
+
+  const timerHandler = (e) => {
+    setTimeout(() => {
+      dispatch({
+        type: "TOGGLE_DONE",
+        index,
+        status,
+        value: !e.target.checked,
+      });
+    }, 3000);
+  };
 
   return (
     <div
@@ -28,30 +47,24 @@ const Task = ({ text, status, index, title }) => {
      `}
     >
       <input
-        onChange={(e) => {
-          dispatch({
-            type: "TOGGLE_DONE",
-            index,
-            status,
-            value: e.target.checked,
-          });
-        }}
+        onChange={timerHandler}
         checked={status === "doneTasks" && true}
         type="checkbox"
       />
       {!showUpDateTask && <p onClick={() => setShowUpdateTask(true)}>{text}</p>}
       {showUpDateTask && (
-        <input
-          value={text}
+        <textarea
+          ref={refInp}
+          className={styles.updateInput}
           autoFocus
           type="text"
-          onMouseLeave={(e) => setShowUpdateTask(false)}
-          onChange={(e) => {
+          onMouseLeave={() => {
+            setShowUpdateTask(false);
             dispatch({
               type: "UPDATE_TASK",
               index,
               status,
-              value: e.target.value,
+              value: refInp.current.value,
             });
           }}
         />

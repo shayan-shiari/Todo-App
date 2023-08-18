@@ -1,5 +1,8 @@
+import { toast } from "react-hot-toast";
+
 // to add Todo-Task and Doing-Task - Multi
 const addTask = (state, action) => {
+  toast.success("Task Added Successfully")
   const multiTask = action.value.map((item) => item);
   const addTaskType = action.addTaskType;
   return {
@@ -10,6 +13,7 @@ const addTask = (state, action) => {
 
 // to delete Tasks
 const deleteTask = (state, action) => {
+  toast.success("Task Deleted Successfully")
   const task = action.status;
   return {
     ...state,
@@ -17,7 +21,7 @@ const deleteTask = (state, action) => {
   };
 };
 
-// to toggle tasks done or todo
+// to toggle Tasks done or todo
 const toggleDone = (state, action) => {
   const task = action.status;
   const filteredValue = state[action.status].filter(
@@ -35,13 +39,16 @@ const toggleDone = (state, action) => {
   };
 };
 
+// to update Tasks
 const updateTask = (state, action) => {
+  console.log(action.value);
   state[action.status][action.index] = action.value;
   return {
     ...state,
   };
 };
 
+// to drag and drop Tasks
 const dragAndDrop = (state, action) => {
   state[action.currentStatus].unshift(action.value);
   return {

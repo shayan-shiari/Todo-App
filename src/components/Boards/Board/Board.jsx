@@ -20,8 +20,6 @@ const Board = (props) => {
     }),
   }));
 
-  console.log(isOver);
-
   const addItemToSection = (item) => {
     dispatch({
       type: "DRAG_DROP",
